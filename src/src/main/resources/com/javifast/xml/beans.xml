@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+ <context:component-scan base-package="com.javifast"></context:component-scan>
+ 
+ <context:property-placeholder location="classpath:valores.properties"/> 
+ <!-- Cargamos el archivo valores.properties  -->
+ 
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+<!-- para utilizar esta clase se debe agregar las dependencias en nuestro archivo pom.xml -->
+  <property name="driverClassName" value="${driver}"></property> 
+  <!-- se señala el driver a usar en este caso mysql -->
+  <property name="url" value="${url}"></property> <!-- se señala la ruta de nuesta db  -->
+  <property name="username" value="${usuario}"></property> <!-- se señala el usuario  -->
+  <property name="password" value="${clave}"></property> <!-- se señala la contraseña  -->
+</bean>
+
+      <!-- Insercion de datos por medio de beans.xml  -->
+     <bean id="jugador" class="com.javifast.beans.Jugador">
+      <property name="id" value="2"></property>
+      <property name="nombre" value="Javifast"></property>
+      <property name="equipo" ref="equipo"></property>
+      <property name="camiseta" ref="camiseta"></property>  
+     </bean> 
+
+     <bean id="equipo" class="com.javifast.beans.Equipo"> 
+      <property name="id" value="110"></property>
+      <property name="nombre" value="Barcelona"></property>  
+     </bean>
+
+    <bean id="camiseta" class="com.javifast.beans.Camiseta">
+      <property name="id" value="110"></property>
+      <property name="numero" value="11"></property>
+      <property name="marca" ref="marca"></property> 
+    </bean>
+    
+    <bean id="marca" class="com.javifast.beans.Marca">  
+      <property name="id" value="1"></property>
+      <property name="nombre" value="Marca Adiddas"></property>
+    </bean>
+
+</beans>
