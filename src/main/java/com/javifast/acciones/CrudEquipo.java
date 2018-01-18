@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.javifast.aplication.App;
 import com.javifast.beans.Equipo;
 import com.javifast.service.ServiceEquipo;
-import com.javifast.springbd.App;
 
 
 public class CrudEquipo {

@@ -1,6 +1,8 @@
 package com.javifast.acciones;
 
 import java.util.Scanner;
+
+import com.javifast.aplication.App;
 import com.javifast.beans.Camiseta;
 import com.javifast.beans.Equipo;
 import com.javifast.beans.Jugador;
@@ -9,7 +11,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.javifast.service.ServiceJugador;
-import com.javifast.springbd.App;
 
 public class CrudJugador {
     ApplicationContext appContext = new ClassPathXmlApplicationContext("com/javifast/xml/beans.xml");

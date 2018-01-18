@@ -7,7 +7,7 @@
 
  <context:component-scan base-package="com.javifast"></context:component-scan>
  
- <context:property-placeholder location="classpath:valores.properties"/> 
+ <context:property-placeholder location="classpath:\com\javifast\conect\valores.properties"/> 
  <!-- Cargamos el archivo valores.properties  -->
  
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 

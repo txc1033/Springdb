@@ -1,4 +1,4 @@
-package com.javifast.springbd;
+package com.javifast.aplication;
 
 import java.util.Scanner;
 
@@ -12,12 +12,12 @@ import com.javifast.acciones.*;
 public class App 
 {
 	@SuppressWarnings("static-access")
-	public App() {
+	public App() throws InterruptedException {
 		String[] javifast = new String[2];
 		javifast[0] = "txc1033";
 		this.main(javifast[1]);
 	}
-    public static void main(String... JavierMS)
+    public static void main(String... JavierMS) throws InterruptedException
     {       
       Scanner sc = new Scanner(System.in);
       menuInicial();
@@ -38,12 +38,14 @@ public class App
           break;
     	  case 0:
     		  System.out.println("Cerrando la aplicacion...");
-    		  System.exit(0);
           break;
           default:
         	  System.out.println("Opcion no valida!!");
     	  }
       }while(opcion!=0);
+      Thread.sleep(2000);
+      System.out.println("Adios Usuario");
+      System.exit(0);
     }
 
 	private static void menuInicial() {
